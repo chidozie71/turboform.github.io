@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Written by stonny
+-->
+
+<link href= 'https://fonts.googleapis.com/css?family=Raleway:500' rel= 'stylesheet' type="text/css">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/all.css"/>
+<link rel="stylesheet" href="w3.css"/>
+<link rel="stylesheet" href="form.css"/>
+<style type="text/css">
+
+
+
+#fieldBgDisp button{
+display:inline;
+margin:0;
+padding:0;
+height:30px; width:50px;
+border: none;
+border-radius:0px;
+margin:5px 0;
+box-shadow:1px 2px 3px #ccc,-1px -2px 3px #ccc;
+}
+
+#formOption {
+
+font-size:10px;
+
+}
+.red{
+background:#F44336;
+.yellow, .orange{
+color:black !important;
+}
+
+
+
+body{    
+font-family:Raleway;    
+}
+.blue{
+background:linear-gradient(to left, #1A237E, #3949AB);
+color:white;}
+button{
+border-radius:5px;
+background:linear-gradient(to left, #1A237E, #3949AB);
+color:white !important;
+margin:5px;
+}
+
+</style>
+<title>form generator</title>
+</head>
+<body style="background:#f1f1f1" class="w3-tiny" >
+<header class="w3-xlarge w3-center blue w3-padding" >Form Generator
+<div class="w3-tiny" >
+Generate your beautiful desired form in 20 seconds
+<button onclick="demo()" class="w3-btn w3-card-4" >Toggle fullscreen demo</button>
+<br>
+<button onclick="showSrc()" class="w3-btn w3-card-4" >Show sourceCode</button>
+<br>
+<a class="w3-btn w3-round w3-card-4"  href="https://www.sololearn.com/Profile/5130756/?ref=app"> Follow Me
+ </a>   
+    
+</div>
+<marquee class="w3-animate-fading w3-tiny" >Made with <i class="fa w3-spin fa-heart"> </i> >>>> Please Upvote !!!<<<<</marquee>
+</div>
+
+</header>
+<main class="w3-margin" >
+
+<button class="w3-button blue  w3-round "  onclick="document.getElementById('formOption').style.display='block'">form options <i class="fa fa-plus w3-large"> </i> </button>
+
+
+<button class="w3-button blue  w3-round "  onclick="field()">Input   <i class="fa fa-plus w3-large"> </i> </button>
+
+<button class="w3-button blue  w3-round "  onclick="btn()">button <i class="fa fa-plus w3-large"> </i> </button>
+
+<!--Add field-->
+<div id="fieldStuff"  class="w3-animate-zoom w3-card w3-margin" style="display: none"  >
+<div class=" w3-tiny blue w3-padding" >
+<div onclick="fieldClose()"  class="w3-border w3-right w3-tag w3-red" >&times;</div>
+input options
+
+</div>
+<div class="w3-margin-top" >
+
+
+<button onclick="fieldType()"class=" w3-button w3-tiny" >type</button>
+
+<button onclick="fieldPlace()"  class=" w3-button w3-tiny" >placeholder</button>
+
+
+<button onclick="fieldEdge()"  class=" w3-button w3-tiny" >round edges</button>
+
+<button onclick="fieldValue()"  class=" w3-button w3-tiny" > value</button>
+
+<button onclick="fieldBorder()"  class=" w3-button w3-tiny" >border</button>
+
+</div>
+<div onclick="fieldAdd()" class="w3-block w3-green w3-margin-top w3-button" >Confirm</div>
+</div>
+
+<!--button-->
+<div style="display:none" id="btnStuff"  class="w3-animate-zoom w3-card w3-margin" style="display: none"  >
+<div class=" w3-tiny blue w3-padding" >
+<div onclick="document.getElementById('btnStuff').style.display='none'"  class="w3-border w3-right w3-tag w3-red" >&times;</div>
+button options
+
+</div>
+<div   class="w3-margin-top" >
+<button onclick="btnEdge()"  class=" w3-button w3-tiny" >round edges</button>
+
+<button onclick="btnValue()"  class=" w3-button w3-tiny" > value</button>
+
+<button onclick="btnBorder()"  class=" w3-button w3-tiny" >border</button>
+
+<button onclick="btnBg()"  class=" w3-button w3-tiny" >background color</button>
+
+<div onclick="btnAdd()" class="w3-block w3-green w3-margin-top w3-button" >Confirm</div>
+
+</div>
+</div>
+
+
+<!--form option-->
+
+<div style="display:none" id="formOption"  class="w3-animate-zoom w3-card w3-margin" style="display: none"  >
+<div class=" w3-tiny blue w3-padding" >
+<div onclick="document.getElementById('formOption').style.display='none'"  class="w3-border w3-right w3-tag w3-red" >&times;</div>
+form options
+
+</div>
+<div   class="w3-margin-top" >
+
+<button class="w3-button blue  w3-round "  onclick="formSize()">font size<i class="fa fa-plus w3-large"> </i> </button>
+
+<button class="w3-button blue  w3-round "  onclick="formCard()">card format <i class="fa fa-plus w3-large"> </i> </button>
+
+<button class="w3-button blue  w3-round "  onclick="formSet()">form title <i class="fa fa-plus w3-large"> </i> </button>
+
+<button class="w3-button blue  w3-round "  onclick="formBg()">form background <i class="fa fa-plus w3-large"> </i> </button>
+
+<button class="w3-button blue  w3-round "  onclick="formBorder()">bordered form   <i class="fa fa-plus w3-large"> </i> </button>
+
+<button class="w3-button blue  w3-round "  onclick="formRound()">round edged form   <i class="fa fa-plus w3-large"> </i> </button>
+</div>
+
+<div onclick="document.getElementById('formOption').style.display='none'" class="w3-block w3-green w3-margin-top w3-button" >Confirm</div>
+</div>
+
+
+
+
+
+</main>
+
+<center id="sCode" >
+<form id="form" class="w3-margin "  style="padding-bottom:30px" >
+<div style="display:none"  id="formtit"  class="w3-center w3-large  w3-padding-24" > 
+Login form
+</div>
+<div class=" w3-margin w3-padding w3-margin-bottom"  id="form2"  >
+
+</div>
+</form>
+</center>
+
+
+<div class="w3-tiny w3-animate-top w3-display-bottom"  id="tarea" style="display:none" >
+<button class="w3-btn w3-card-4"  onclick="closeCode()" >Main Menu</button>
+<textarea id="txt" style="height:300px"    class=" w3-border-blue w3-padding" >
+</textarea>
+</div>
+</body>
+
+<script type="text/javascript">
+var fbg,fcol,fval,fedge,fplace,ftext,fborder,iconDir,prom,ftype, card,rounded,bordered;
+card =false;
+rounded=false;
+bordered=true;
+ fval=""; fplace="";ftext="nil";fborder=0;iconDir="left";prom="user"
+
+var fieldBgDisp=document.getElementById("fieldBgDisp");
+var btnStuff=document.getElementById("btnStuff");
+
+var form= document.getElementById("form");
+
+var form2= document.getElementById("form2");
+
+var fieldStuff=document.getElementById("fieldStuff");
+
+var formtit = document.getElementById("formtit");
+
+
+var tarea=document.getElementById("tarea");
+
+var body= document.body;
+
+function formRound(){ 
+rounded=true;
+form.classList.toggle("w3-round")
+}
+function formCard(){ 
+carded=true;
+form.classList.toggle("w3-card")
+}
+function formBorder(){
+ bordered=true;
+ form.classList.toggle("w3-border")
+ }
+
+
+
+//formtitle
+function formSet(){ 
+formtit.style.display="block";
+var hello=prompt("enter form title","Login with email");
+var helloTit= prompt("enter background color of the title","red");
+formtit.innerText=hello;
+formtit.classList.toggle("w3-"+helloTit);
+formtit.style.borderTopLeftRadius="inherit";
+formtit.style.borderTopRightRadius="inherit";
+formtit.style.display="block";
+}
+
+//formbg
+function formBg(){
+ var fBG=prompt("Enter color name","blue");
+form.classList.add("w3-"+fBG); 
+ }
+
+function formSize(){ 
+
+var fsize=prompt("Enter a font size ","15");
+form.style.fontSize=fsize+"px";
+
+}
+
+function field(){
+fieldStuff.style.display="block"
+}
+function fieldClose(){ 
+fieldStuff.style.display="none";
+}
+
+
+ function fieldType(){ 
+ ftype=prompt("Enter type of input","text")
+ }
+ 
+ 
+ function fieldValue(){
+ fval=prompt("Enter the input value");;
+ }
+ 
+ function fieldPlace(){
+  fplace=prompt("enter input placeholder") 
+  }
+  
+  function fieldEdge(){ 
+  fedge=prompt("Add a round edges?\t (yes/no)","yes")
+  }
+ 
+ function fieldBorder(){
+fborder=prompt("Add a border ?\t (yes/no)","yes") 
+  }
+  
+ var bval,bborder,bedge,bbg
+bval= "submit";
+bbg="green"
+ function btnValue(){
+ bval=prompt("Enter the button text","submit");
+ }
+  function btnBorder(){
+  bborder=prompt("add a border ?\t (yes/no)","no");
+  }
+  function btnEdge(){ 
+ bedge=prompt("Add a round edge? \t(yes/no)","yes")
+  }
+function btnBg(){ 
+ bbg=prompt("Add a background color (color names only)","red")
+}
+  
+  
+  
+  function btn(){ 
+ btnStuff.style.display="block"
+  }
+  
+  
+  
+ function fieldAdd(){
+ var input= document.createElement("input");
+input.classList.add("w3-input");
+
+//input.style.width="80%"
+input.placeHolder=fplace;
+if(fedge=="yes"){
+input.classList.add("w3-round");
+}
+input.classList.add("w3-padding-16");
+
+input.value=fval;
+input.classList.add("w3-margin-top");
+input.placeholder=fplace;
+
+if(fborder=="yes"){
+input.classList.add("w3-border")
+}
+input.type=ftype;
+
+ form2.appendChild(input) 
+  }
+ 
+ 
+ function btnAdd(){
+  var newbtn=document.createElement("input");
+
+//newbtn.style.width="80%"
+
+if(bedge=="yes"){
+newbtn.classList.add("w3-round");
+}
+newbtn.classList.add("w3-padding-16");
+if(bborder=="yes"){
+newbtn.classList.add("w3-border");
+}
+
+newbtn.type="button";
+newbtn.classList.add("w3-button");
+
+newbtn.classList.add("w3-"+bbg)
+newbtn.classList.add("w3-block");
+newbtn.classList.add("w3-margin-top");
+if(bval=="submit"){
+newbtn.value=bval;
+}
+newbtn.value=bval;
+form2.appendChild(newbtn)
+  }
+ 
+ 
+ function demo(){
+document.querySelector("main").classList.toggle("w3-hide");
+ }
+ 
+ function showSrc(){  
+document.querySelector("main").style.display="none"
+tarea.style.display='block';
+ document.getElementById("txt").value+="<!--Designed by Stonny--><!DOCTYPE html>\n<html>\n<head>\n<meta name='viewport'content='width=device-width, initial-scale=1.0'><title></title>\n<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'/>\n</head>\n<body style='background:#e9e9e9'>\n"+document.getElementById("sCode").innerHTML+"</body>\n</html>";
+sCode.style.display="none";
+
+ }
+ 
+ function closeCode(){ 
+ sCode.style.display="block";
+ document.querySelector("main").style.display="block";
+tarea.style.display='none';
+body.style.display='block';
+ }
+</script>
+<script src="form.js">  </script>
+
+</html>
